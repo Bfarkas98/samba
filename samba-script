@@ -9,7 +9,7 @@ sudo mkdir /srv/readonly
 sudo chmod 755 /srv/readonly
 mv /home/sis/samba/smb.conf /etc/samba/smb.conf
 sudo service smbd restart
-sudo adduser user2 --gecos "" --disabled-password
+sudo adduser user2 --gecos "user2,,," --disabled-password
 echo "user2:123" | sudo chpasswd
 sudo mkdir /srv/user2
 sudo chown user2 /srv/user2
