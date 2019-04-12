@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install samba -y
+sudo mkdir /srv/kozos
+sudo chmod 777 /srv/kozossudo mkdir /srv/readonly
+sudo chmod 755 /srv/readonly
+sudo service smbd restart
+sudo service smbd status
+sudo adduser user2 --gecos "" --disabled-password
+echo "user2:123" | sudo chpasswd
+sudo mkdir /srv/user2
+sudo chown user2 /srv/user2
+sudo chmod 700 /srv/user2
+echo -e "123\n123" | smbpasswd -s -a user2
+sudo service smbd restart
