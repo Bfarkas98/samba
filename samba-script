@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 sudo mv /home/sis/samba/hostname /etc/hostname
 sudo mv /home/sis/samba/hosts /etc/hosts
 sudo apt-get update
