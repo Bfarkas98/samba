@@ -4,11 +4,11 @@ sudo mv /home/sis/samba/hosts /etc/hosts
 sudo apt-get update
 sudo apt-get install samba -y
 sudo mkdir /srv/kozos
-sudo chmod 777 /srv/kozossudo mkdir /srv/readonly
+sudo chmod 777 /srv/kozos
+sudo mkdir /srv/readonly
 sudo chmod 755 /srv/readonly
 mv /home/sis/samba/smb.conf /etc/samba/smb.conf
 sudo service smbd restart
-sudo service smbd status
 sudo adduser user2 --gecos "" --disabled-password
 echo "user2:123" | sudo chpasswd
 sudo mkdir /srv/user2
